@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { nouns } from './lib/noun'
 import { adjectives } from './lib/adjective'
+import { Timer } from './components/timer'
 
 import banner from './images/banner.png'
 
@@ -42,6 +43,8 @@ function App() {
           {adjective} {noun}
         </p>
       </div>
+
+      {/* <Timer /> */}
 
       <button onClick={() => show ? setShow(false) : setShow(true)}>
         What is <strong>Gay Egypt</strong> and what are the rules?
