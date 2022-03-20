@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { nouns } from './lib/noun'
 import { adjectives } from './lib/adjective'
+import random from 'random'
 import { Timer } from './components/timer'
 
 import banner from './images/banner.png'
@@ -20,8 +21,8 @@ function App() {
   }
 
   function finalSelection (adj, nn) {
-    setNoun(randomSel(nouns))
-    setAdjective(randomSel(adjectives))
+    setNoun(nouns[random.int(0,nouns.length -1)])
+    setAdjective(adjectives[random.int(0, adjectives.length -1)])
   } 
 
   //console.log(randomSel(adjectives), randomSel(nouns))
