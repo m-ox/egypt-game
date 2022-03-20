@@ -60,9 +60,12 @@ function App() {
           <strong>Gay Egypt</strong> is an adult competitive drawing game. It got its name from the very first example topic drawn in the game, ever.
           </li>
           <li>
+            Determine who draws first. Once a round is completed, proceed to take turns drawing in a circle.
+          </li>
+          <li>
             When the round starts, the artist randomly generates a topic. Only the artist can see what the topic is. You can use any medium. Pen and paper, Tilt brush, fingerpainting, drawing tablet. Whatever. 
           </li>
-          <li>The artist gets <strong>5</strong> minutes to draw their topic. Depending how you want to play, you can choose to let people guess as you draw, or give the guessers 30 seconds to guess at the 5 minute end and reveal.</li>
+          <li>The artist gets <strong>2</strong> minutes to draw their topic. Depending how you want to play, you can choose to let people guess as you draw, or give the guessers 30 seconds to guess at the 5 minute end and reveal.</li>
           <li>
             Artists are allotted <strong>2</strong> unrelated written words to their topic in their illustration.
           </li>
@@ -70,7 +73,7 @@ function App() {
             Guessers are to say precisely the topic's two words to win the round.
           </li>
           <li>
-            The artist can only confirm with a nod the noun, but not the adjective.
+            The artist can only confirm with a nod the noun, but not the descriptive word.
           </li>
           <li>
             Once the time is up and if someone has guessed correctly, the winner gets one point.
