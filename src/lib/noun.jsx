@@ -103,7 +103,16 @@ export const nouns = [
     'penis',
     'punk',
     'emo',
-    'goth'
+    'goth',
+    'Starbucks',
+    'giraffe',
+    'mushroom',
+    'ice cream van',
+    'zombie',
+    'bat',
+    'shovel',
+    'toast',
+    'fractal'
 ]
 
 export default nouns
