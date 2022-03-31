@@ -1,12 +1,8 @@
 const safe = [
     'sick',
-    'trippy',
     'flirtatious',
-    'kinky',
-    'depressed',
     'spicy',
     'empty',
-    'dead',
     'trashy',
     'recreational',
     'cold',
@@ -20,7 +16,6 @@ const safe = [
     'messy',
     'loud',
     'juicy',
-    'bougie',
     'itchy',
     'blushing',
     'slippery',
@@ -38,7 +33,6 @@ const safe = [
     "toothy",
     "flying",
     "unicycling",
-    "starving",
     "annoying",
     "ugly",
     "crusty",
@@ -47,7 +41,6 @@ const safe = [
     'sleepy',
     'hot',
     'crumbly',
-    'violent',
     'bouncy',
     'sprinkled',
     'slobbery',
@@ -59,7 +52,13 @@ const safe = [
 ]
 
 const unsafe = [
-    'sexy'
+    'kinky',
+    'depressed',
+    'trippy',
+    'dead',
+    'bougie',
+    "starving",
+    'violent'
 ]
 
 function adjective(safety) {
