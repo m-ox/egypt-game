@@ -5,7 +5,6 @@ export const adjectives = [
     'kinky',
     'depressed',
     'spicy',
-    'gay',
     'empty',
     'dead',
     'trashy',
