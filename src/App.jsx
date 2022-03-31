@@ -21,6 +21,7 @@ function App() {
   }
 
   function finalSelection (adj, nn) {
+    // CURRENTLY DEFAULTED TO SAFE! CREATE CHECKBOX
     const nouns = noun(true)
     const adjectives = adjective(true)
 
@@ -29,9 +30,6 @@ function App() {
   } 
 
   //console.log(randomSel(adjectives), randomSel(nouns))
-
-  // TO DO ADD LIBRARY SELECTION
-  // SFW AND NSFW VERSIONS!!
 
   return (
     <div className="App">

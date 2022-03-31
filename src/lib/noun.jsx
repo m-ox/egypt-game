@@ -2,7 +2,6 @@ const safe = [
     'hometown',
     'Jean-Luc Picard',
     'spaghetti western',
-    'gutter punk',
     'Baxter',
     'wasps',
     'salad',
@@ -53,8 +52,6 @@ const safe = [
     'robot',
     'birthday party',
     'violin',
-    'lobotomy',
-    'jail',
     'snail',
     'snake',
     'muffin',
@@ -92,16 +89,15 @@ const safe = [
 ]
 
 const unsafe = [
-    'drunk'
+    'drunk',
+    'gutter punk',
+    'lobotomy',
+    'jail'
 ]
 
 //currently defaulting to unsafe nouns!
 function noun(safety) {
-    if (safety) {
-        return safe
-    } else {
-        return safe.concat(...unsafe)
-    }
+    return (safety ? safe : safe.concat(...unsafe))
 }
 
 export default noun

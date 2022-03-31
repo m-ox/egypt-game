@@ -62,9 +62,12 @@ const unsafe = [
 ]
 
 function adjective(safety) {
+    //tighen up into ternary once App has sfw checkbox
     if (safety) {
+        console.log('I am safe')
         return safe
     } else {
+        console.log('I am not safe!')
         return safe.concat(...unsafe)
     }
 }
