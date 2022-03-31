@@ -15,7 +15,8 @@ export const Timer = () => {
   
     const getTimeRemaining = (e) => {
         if (timer === '00:00:00') {
-            useSound(ding)
+            //TODO FIX SOUND
+            //useSound(ding)
         }
 
         const total = Date.parse(e) - Date.parse(new Date());

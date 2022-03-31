@@ -1,4 +1,4 @@
-export const nouns = [
+const safe = [
     'hometown',
     'Jean-Luc Picard',
     'spaghetti western',
@@ -93,4 +93,17 @@ export const nouns = [
     'goth'
 ]
 
-export default nouns
+const unsafe = [
+    'drunk'
+]
+
+//currently defaulting to unsafe nouns!
+function noun(safety) {
+    if (safety) {
+        return safe
+    } else {
+        return safe.concat(...unsafe)
+    }
+}
+
+export default noun

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import { nouns } from './lib/noun'
-import { adjectives } from './lib/adjective'
+import noun from './lib/noun'
+import adjective from './lib/adjective'
 import random from 'random'
 import { Timer } from './components/timer'
 
@@ -12,8 +12,8 @@ import './styles/main.scss'
 // import scss
 
 function App() {
-  const [noun, setNoun] = useState('something')
-  const [adjective, setAdjective] = useState('randomly')
+  const [nounWord, setNoun] = useState('something')
+  const [adjectiveWord, setAdjective] = useState('randomly')
   const [show, setShow] = useState(false)
 
   function randomSel (arr) {
@@ -21,27 +21,33 @@ function App() {
   }
 
   function finalSelection (adj, nn) {
+    const nouns = noun(true)
+    const adjectives = adjective(true)
+
     setNoun(nouns[random.int(0,nouns.length -1)])
     setAdjective(adjectives[random.int(0, adjectives.length -1)])
   } 
 
   //console.log(randomSel(adjectives), randomSel(nouns))
 
+  // TO DO ADD LIBRARY SELECTION
+  // SFW AND NSFW VERSIONS!!
+
   return (
     <div className="App">
       <div className="banner">
         <img src={banner} />
-        v1.0.0
+        v1.0.1
       </div>
 
       <div className="button-container">
-      <button onClick={() => (finalSelection(nouns, adjectives))}>
+      <button onClick={() => (finalSelection(noun, adjective))}>
         Click me for a topic!</button>
       </div>
 
       <div className="topic-result">
         <p>
-          {adjective} {noun}
+          {adjectiveWord} {nounWord}
         </p>
       </div>
 

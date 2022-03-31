@@ -1,4 +1,4 @@
-export const adjectives = [
+const safe = [
     'sick',
     'trippy',
     'flirtatious',
@@ -58,4 +58,16 @@ export const adjectives = [
     'confused'
 ]
 
-export default adjectives
+const unsafe = [
+    'sexy'
+]
+
+function adjective(safety) {
+    if (safety) {
+        return safe
+    } else {
+        return safe.concat(...unsafe)
+    }
+}
+
+export default adjective
