@@ -45,7 +45,7 @@ function App() {
         </p>
       </div>
 
-      {/* <Timer /> */}
+      <Timer />
 
       <button onClick={() => show ? setShow(false) : setShow(true)}>
         What is <strong>Gay Egypt</strong> and what are the rules?

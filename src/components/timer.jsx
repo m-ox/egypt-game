@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import useSound from 'use-sound'
+import ding from '../images/ding.mp3';
   
 export const Timer = () => {
   
@@ -10,9 +11,13 @@ export const Timer = () => {
   
     // The state for our timer
     const [timer, setTimer] = useState('00:00:00');
-  
+    const [start, setStart] = useState(false)  
   
     const getTimeRemaining = (e) => {
+        if (timer === '00:00:00') {
+            useSound(ding)
+        }
+
         const total = Date.parse(e) - Date.parse(new Date());
         const seconds = Math.floor((total / 1000) % 60);
         const minutes = Math.floor((total / 1000 / 60) % 60);
@@ -45,7 +50,7 @@ export const Timer = () => {
         // If you adjust it you should also need to
         // adjust the Endtime formula we are about
         // to code next    
-        setTimer('00:05:00');
+        setTimer('00:02:00');
   
         // If you try to remove this line the 
         // updating of timer Variable will be
@@ -62,7 +67,7 @@ export const Timer = () => {
   
         // This is where you need to adjust if 
         // you entend to add more time
-        deadline.setSeconds(deadline.getSeconds() + 300);
+        deadline.setSeconds(deadline.getSeconds() + 120);
         return deadline;
     }
   
@@ -80,13 +85,16 @@ export const Timer = () => {
     // button first we create function to be called
     // by the button
     const onClickReset = () => {
+        setStart(true)
         clearTimer(getDeadTime());
     }
   
     return (
         <div className="App">
-            <h2>{timer}</h2>
-            <button onClick={onClickReset}>Reset</button>
+            {start ? <h2>{timer}</h2> : <h2>00:00:00</h2>}
+            <button onClick={onClickReset}>
+                {start ? <div>Reset</div> : <div>Go!</div>}
+            </button>
         </div>
     )
 }
