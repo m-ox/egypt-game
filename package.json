@@ -1,7 +1,7 @@
 {
   "name": "egypt-game",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "homepage": "https://m-ox.github.io/egypt-game/",
   "scripts": {
     "start": "vite",
