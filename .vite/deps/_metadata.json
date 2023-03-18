@@ -1,0 +1,50 @@
+{
+  "hash": "aeead58e",
+  "browserHash": "0ea63044",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "3631fcf0",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "9a9bfa3d",
+      "needsInterop": true
+    },
+    "random": {
+      "src": "../../node_modules/random/dist/esm/index.esm.js",
+      "file": "random.js",
+      "fileHash": "e74c91c1",
+      "needsInterop": false
+    },
+    "use-sound": {
+      "src": "../../node_modules/use-sound/dist/use-sound.esm.js",
+      "file": "use-sound.js",
+      "fileHash": "f31ea61a",
+      "needsInterop": false
+    },
+    "react-dom": {
+      "src": "../../node_modules/react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "96a5d64e",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-NREMUTAN": {
+      "file": "chunk-NREMUTAN.js"
+    },
+    "chunk-ST3U5LCA": {
+      "file": "chunk-ST3U5LCA.js"
+    },
+    "howler-2NGDND32": {
+      "file": "howler-2NGDND32.js"
+    },
+    "chunk-DFKQJ226": {
+      "file": "chunk-DFKQJ226.js"
+    }
+  }
+}

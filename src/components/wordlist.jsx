@@ -4,6 +4,7 @@ export const WordList = ({extraWords}) => {
 
   return (
     <div className="word-list">
+      <p style={{ textDecoration: "underline" }}>Extra Words List</p>
       <ul>
         {extraWords.map((word, i) => {
           return (

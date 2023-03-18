@@ -17,6 +17,7 @@ body {
 
     .button-container {
         display: flex;
+        flex-direction: column;
         .component {
             margin: 10px 0;
             padding: 15px 40px;
@@ -38,6 +39,7 @@ body {
             max-height: 150px;
             text-align-last: center;
             display: flex;
+            flex-direction: column;
             justify-self: center;
             text-align: center;
 
@@ -85,7 +87,7 @@ button {
     border-radius: 20px;
 }
 
-@media only screen and (max-width:801px)  {
+@media only screen and (max-width: 600px)  {
     .App {
         .banner {
             margin: 20px 10px;
@@ -93,6 +95,11 @@ button {
             img {
                 width: 100%;
             }
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
         }
 
         .topic-result {
