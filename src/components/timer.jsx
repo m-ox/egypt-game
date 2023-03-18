@@ -91,7 +91,7 @@ export const Timer = () => {
     }
   
     return (
-        <div className="App">
+        <div className="timer">
             {start ? <h2>{timer}</h2> : <h2>00:00:00</h2>}
             <button onClick={onClickReset}>
                 {start ? <div>Reset</div> : <div>Go!</div>}

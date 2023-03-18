@@ -18,6 +18,7 @@ const safe = [
     'juicy',
     'itchy',
     'blushing',
+    'slimy',
     'slippery',
     'icy',
     'dizzy',
@@ -48,7 +49,8 @@ const safe = [
     'chubby',
     'glamorous',
     'obedient',
-    'confused'
+    'confused',
+    'fat',
 ]
 
 const unsafe = [
@@ -61,15 +63,9 @@ const unsafe = [
     'violent'
 ]
 
-function adjective(safety) {
-    //tighen up into ternary once App has sfw checkbox
-    if (safety) {
-        console.log('I am safe')
-        return safe
-    } else {
-        console.log('I am not safe!')
-        return safe.concat(...unsafe)
-    }
+function adjective(safety, extra) {
+    let resultList = safety ? safe : safe.concat(...unsafe)
+    return resultList
 }
 
 export default adjective

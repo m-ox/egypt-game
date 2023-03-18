@@ -4,6 +4,7 @@ import noun from './lib/noun'
 import adjective from './lib/adjective'
 import random from 'random'
 import { Timer } from './components/timer'
+import { WordList } from './components/wordlist'
 
 import banner from './images/banner.png'
 
@@ -14,22 +15,44 @@ import './styles/main.scss'
 function App() {
   const [nounWord, setNoun] = useState('something')
   const [adjectiveWord, setAdjective] = useState('randomly')
+  const [extraNouns, setExtraNouns] = useState([])
+  const [extraAdjectives, setExtraAdjectives] = useState([])
+
+  const [safe, setSafe] = useState(true)
   const [show, setShow] = useState(false)
+  const [adjValue, setAdjValue] = useState('')
+  const [nounValue, setNounValue] = useState('')
 
   function randomSel (arr) {
     return arr[Math.floor(Math.random() * arr.length)]
   }
 
   function finalSelection (adj, nn) {
-    // CURRENTLY DEFAULTED TO SAFE! CREATE CHECKBOX
-    const nouns = noun(true)
-    const adjectives = adjective(true)
+    const nouns = noun(safe).concat(...extraNouns)
+    const adjectives = adjective().concat(...extraAdjectives)
+    console.log('nouns:', nouns)
 
     setNoun(nouns[random.int(0,nouns.length -1)])
     setAdjective(adjectives[random.int(0, adjectives.length -1)])
   } 
 
-  //console.log(randomSel(adjectives), randomSel(nouns))
+  function handleKeyDown(e, wordType) {
+    if (e.key === 'Enter') {
+      if (wordType === 'noun') {
+        const newArr = extraNouns.concat([e.target.value])
+        setExtraNouns(newArr)
+        setNounValue('')
+      } else if (wordType === 'adj') {
+        const newArr = extraAdjectives.concat([e.target.value])
+        setExtraNouns(newArr)
+        setAdjValue('')
+      } else {
+        console.error('Something went wrong...')
+        setNounValue('')
+        setAdjValue('')
+      }
+    }
+  }
 
   return (
     <div className="App">
@@ -39,9 +62,37 @@ function App() {
       </div>
 
       <div className="button-container">
-      <button onClick={() => (finalSelection(noun, adjective))}>
-        Click me for a topic!</button>
+        <button onClick={() => (finalSelection(noun, adjective))}>
+          Click me for a topic!
+        </button>
+        <button
+          onClick={() => safe ? setSafe(!safe) : setSafe(!safe)}
+        >
+          Safety {safe ? 'ON' : 'OFF'}
+        </button>
+
+        <input
+          type="text"
+          className="component"
+          value={adjValue}
+          placeholder="Enter new descriptor here..."
+          onChange={e => {
+            setAdjValue(e.target.value)
+          }}
+          onKeyDown={(e => handleKeyDown(e, 'adj'))}
+        />
+        <input
+          type="text"
+          className="component"
+          value={nounValue}
+          placeholder="Enter new subject here..."
+          onChange={e => {
+            setNounValue(e.target.value)
+          }}
+          onKeyDown={(e => handleKeyDown(e, 'noun'))}
+        />
       </div>
+      
 
       <div className="topic-result">
         <p>
@@ -49,7 +100,12 @@ function App() {
         </p>
       </div>
 
-      <Timer />
+      <div className="time-n-word-list">
+        <Timer />
+        <WordList
+          extraWords={extraNouns.concat(...extraAdjectives)}
+        />
+      </div>
 
       <button onClick={() => show ? setShow(false) : setShow(true)}>
         What is <strong>Gay Egypt</strong> and what are the rules?
@@ -93,7 +149,7 @@ function App() {
 
         </div> : null}
 
-    <p>Game created by Maud, Cloudy, and Adam</p>
+    <p>Game and site created by Maud</p>
 
     </div>
   )

@@ -32,7 +32,6 @@ const safe = [
     'cricket',
     'spaceman',
     'doctor',
-    'Rickrolling',
     'camel',
     'catnip',
     'ice cream',
@@ -85,7 +84,8 @@ const safe = [
     'fridge',
     'punk',
     'emo',
-    'goth'
+    'goth',
+    'Naruto'
 ]
 
 const unsafe = [
@@ -95,9 +95,9 @@ const unsafe = [
     'jail'
 ]
 
-//currently defaulting to unsafe nouns!
 function noun(safety) {
-    return (safety ? safe : safe.concat(...unsafe))
+    let resultList = safety ? safe : safe.concat(...unsafe)
+    return resultList
 }
 
 export default noun
