@@ -66,6 +66,7 @@ function App() {
         </button>
         <button
           onClick={() => safe ? setSafe(!safe) : setSafe(!safe)}
+          style={{ fontWeight: '900', color: safe ? 'green' : 'red' }}
         >
           Safety {safe ? 'ON' : 'OFF'}
         </button>
