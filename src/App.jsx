@@ -58,7 +58,7 @@ function App() {
     <div className="App">
       <div className="banner">
         <img src={banner} />
-        v1.0.1
+        v2.0.0
       </div>
 
       <div className="button-container">
