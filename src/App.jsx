@@ -36,7 +36,7 @@ function App() {
   } 
 
   function handleKeyDown(e, wordType) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.key === 'NumpadEnter') {
       if (wordType === 'noun') {
         const newArr = extraNouns.concat([e.target.value])
         setExtraNouns(newArr)
