@@ -38,13 +38,13 @@ function App() {
   function handleKeyDown(e, wordType) {
     if (e.key === 'Enter' || e.key === 'NumpadEnter') {
       setSafe(e.key)
-      if (wordType === 13) {
+      if (wordType === 'noun') {
         const newArr = extraNouns.concat([e.target.value])
         setExtraNouns(newArr)
         setNounValue('')
       } else if (wordType === 'adj') {
         const newArr = extraAdjectives.concat([e.target.value])
-        setExtraNouns(newArr)
+        setExtraAdjectives(newArr)
         setAdjValue('')
       } else {
         console.error('Something went wrong...')
@@ -58,7 +58,7 @@ function App() {
     <div className="App">
       <div className="banner">
         <img src={banner} />
-        v2.0.2 {safe}
+        v2.0.3 {safe}
       </div>
 
       <div className="button-container">
