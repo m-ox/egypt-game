@@ -37,7 +37,7 @@ function App() {
 
   function handleKeyDown(e, wordType) {
     if (e.key === 'Enter' || e.key === 'NumpadEnter') {
-      if (wordType === 'noun') {
+      if (wordType === 13) {
         const newArr = extraNouns.concat([e.target.value])
         setExtraNouns(newArr)
         setNounValue('')
@@ -57,7 +57,7 @@ function App() {
     <div className="App">
       <div className="banner">
         <img src={banner} />
-        v2.0.0
+        v2.0.1
       </div>
 
       <div className="button-container">
