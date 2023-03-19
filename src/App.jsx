@@ -29,21 +29,19 @@ function App() {
   function finalSelection (adj, nn) {
     const nouns = noun(safe).concat(...extraNouns)
     const adjectives = adjective().concat(...extraAdjectives)
-    console.log('nouns:', nouns)
 
     setNoun(nouns[random.int(0,nouns.length -1)])
     setAdjective(adjectives[random.int(0, adjectives.length -1)])
   } 
 
   function handleKeyDown(e, wordType) {
-    console.log('wordtype:', wordType)
-    if (e.key === 'Enter' || e.key === 'NumpadEnter') {
+    console.log('wordtype:', e.key)
+    if (e.key === 'Enter' || e.key === 'NumpadEnter' || e.key === '.') {
       if (wordType === 'noun') {
         const newArr = extraNouns.concat([e.target.value])
         setExtraNouns(newArr)
         setNounValue('')
       } else if (wordType === 'adj') {
-        setSafe('ragglefraggle', e.key)
         const newArr = extraAdjectives.concat([e.target.value])
         setExtraAdjectives(newArr)
         setAdjValue('')
@@ -59,7 +57,7 @@ function App() {
     <div className="App">
       <div className="banner">
         <img src={banner} />
-        v2.0.5
+        v2.0.5 {safe}
       </div>
 
       <div className="button-container">
@@ -82,8 +80,6 @@ function App() {
             setAdjValue(e.target.value)
           }}
           onKeyDown={(e => handleKeyDown(e, 'adj'))}
-          onInput={(e) => handleKeyDown(e, 'adj')}
-          onLeave={(e) => handleKeyDown(e, 'adj')}
         />
         <input
           type="text"
