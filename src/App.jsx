@@ -57,7 +57,7 @@ function App() {
     <div className="App">
       <div className="banner">
         <img src={banner} />
-        v2.0.4
+        v2.0.5
       </div>
 
       <div className="button-container">
@@ -80,7 +80,8 @@ function App() {
             setAdjValue(e.target.value)
           }}
           onKeyDown={(e => handleKeyDown(e, 'adj'))}
-          onKeyUp={(e) => handleKeyDown(e, 'adj')}
+          onInput={(e) => handleKeyDown(e, 'adj')}
+          onLeave={(e) => handleKeyDown(e, 'adj')}
         />
         <input
           type="text"
