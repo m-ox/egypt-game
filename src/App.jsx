@@ -36,12 +36,14 @@ function App() {
   } 
 
   function handleKeyDown(e, wordType) {
+    console.log('wordtype:', wordType)
     if (e.key === 'Enter' || e.key === 'NumpadEnter') {
       if (wordType === 'noun') {
         const newArr = extraNouns.concat([e.target.value])
         setExtraNouns(newArr)
         setNounValue('')
       } else if (wordType === 'adj') {
+        setSafe('ragglefraggle', e.key)
         const newArr = extraAdjectives.concat([e.target.value])
         setExtraAdjectives(newArr)
         setAdjValue('')
@@ -92,7 +94,6 @@ function App() {
             setNounValue(e.target.value)
           }}
           onKeyDown={(e => handleKeyDown(e, 'noun'))}
-          onKeyUp={(e) => handleKeyDown(e, 'noun')}
         />
       </div>
       
