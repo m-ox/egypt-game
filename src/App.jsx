@@ -35,7 +35,7 @@ function App() {
   } 
 
   function handleKeyDown(e, wordType) {
-    if (e.key === 'Enter' || e.key === 'NumpadEnter' || e.key === '.') {
+    if (e.key === 'Enter' || e.key === 'NumpadEnter' || e.key === 'next') {
       if (wordType === 'noun') {
         const newArr = extraNouns.concat([e.target.value])
         setExtraNouns(newArr)
@@ -56,7 +56,7 @@ function App() {
     <div className="App">
       <div className="banner">
         <img src={banner} />
-        v2.0.6
+        v2.0.7
       </div>
 
       <div className="button-container">
@@ -79,6 +79,7 @@ function App() {
             setAdjValue(e.target.value)
           }}
           onKeyDown={(e => handleKeyDown(e, 'adj'))}
+          onSubmit={(e => handleKeyDown(e, 'adj'))}
         />
         <input
           type="text"
