@@ -78,7 +78,7 @@ function App() {
           onChange={e => {
             setAdjValue(e.target.value)
           }}
-          onKeyDown={(e => handleKeyDown(e, 'adj'))}
+          onKeyUp={(e => handleKeyDown(e, 'adj'))}
           onSubmit={(e => handleKeyDown(e, 'adj'))}
         />
         <input
@@ -89,10 +89,12 @@ function App() {
           onChange={e => {
             setNounValue(e.target.value)
           }}
-          onKeyDown={(e => handleKeyDown(e, 'noun'))}
+          onKeyUp={(e => handleKeyDown(e, 'noun'))}
         />
       </div>
-      
+      <p style={{ fontSize: '10px', width: '400px' }}>
+      You may see performance issues with the input on Chrome browser. See here for more info: https://github.com/react-tags/react-tags/issues/199
+      </p>
 
       <div className="topic-result">
         <p>
